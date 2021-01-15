@@ -1,3 +1,5 @@
+import { Main } from './komponen/Main';
+
 window._ = require('lodash');
 
 /**
@@ -11,6 +13,7 @@ try {
     window.$ = window.jQuery = require('jquery');
 
     require('bootstrap');
+    
 } catch (e) {}
 
 /**
@@ -31,6 +34,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 // import Echo from 'laravel-echo';
 
+
 // window.Pusher = require('pusher-js');
 
 // window.Echo = new Echo({
@@ -39,3 +43,4 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+window.main = new Main();
