@@ -17,7 +17,11 @@ DB_PASSWORD=<password_mysql>
 ```
 
 - Setelah membuat database dan konfigurasi database di file .env, di VSCODE tekan CTRL + ~ di root directory project
-- Setelah terminal VSCODE terbuka Masukkan perintah 
+- Setelah terminal VSCODE terbuka update composer dengan menggunakan perintah
+```bash
+    composer update
+```
+- Setelah update composer, masukkan lagi perintah di terminal VSCODE
 ```bash
     php artisan migrate
 ```
