@@ -20,6 +20,7 @@ class CreateKeanggotaansTable extends Migration
             $table->string('alamat',100);
             $table->string('telepon',15)->unique();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

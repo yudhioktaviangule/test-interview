@@ -12,6 +12,17 @@
                 </div>
                 <div class="card-body">
                     <div class="container-fluid">
+                        @if($errors->any())
+                            <div class="alert alert-danger alert-dismissible fade show">
+                                @foreach($errors->all() as $K_error => $error)
+                                    <span>{{ $error }}</span><br>
+                                @endforeach
+                                
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        @endif
                         <div class="text-right">
                             <a href="{{route('anggota.create')}}" class="btn btn-info">
                                 Tambah Anggota
@@ -25,8 +36,24 @@
                                     <th>E-Mail</th>
                                     <th>Alamat</th>
                                     <th>Telepon</th>
+                                    <th>Aksi</th>
                                 </tr>
                             </thead>
+                            <tbody>
+                                @foreach($data as $key => $value)
+                                    <tr>
+                                        <td>{{ $value->name }}</td>
+                                        <td>{{ $value->email }}</td>
+                                        <td>{{ $value->alamat }}</td>
+                                        <td>{{ $value->telepon }}</td>
+                                        <td>
+                                            <a href="{{ route('anggota.show',['anggotum'=>$value->id]) }}" class="btn btn-sm btn-block btn-primary">
+                                                Tampil
+                                            </a>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
                         </table>
                     </div>
                 </div>

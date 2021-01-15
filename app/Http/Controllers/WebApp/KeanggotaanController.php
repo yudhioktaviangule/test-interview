@@ -10,12 +10,14 @@ class KeanggotaanController extends Controller
 {
     public function index()
     {
-        return view("keanggotaan.index");
+        $data = Keanggotaan::get();
+        return view("keanggotaan.index",compact("data"));
     }
 
 
     public function create()
-    {
+    {   
+
         return view("keanggotaan.create");
     }
 
@@ -40,24 +42,37 @@ class KeanggotaanController extends Controller
   
     public function show($id)
     {
-        //
+        $data = Keanggotaan::where("id",$id)->first();
+        return view("keanggotaan.tampil",compact("data"));
     }
 
     
     public function edit($id)
     {
-        //
+        $data = Keanggotaan::where("id",$id)->first();
+        if($data == NULL):
+            return redirect(route('anggota.index'))->withErrors(['Data anggota tidak ditemukan']);
+        else:
+            return view("keanggotaan.edit",compact("data"));
+        endif;
     }
 
     
     public function update(Request $request, $id)
     {
-        //
+        $data          = Keanggotaan::where("id",$id)->first();
+        $data->name    = $request->name == NULL ? $data->name : $request->name;
+        $data->email   = $request->email == NULL ? $data->email : $request->email;
+        $data->alamat  = $request->alamat == NULL ? $data->alamat : $request->alamat;
+        $data->telepon = $request->telepon == NULL ? $data->telepon : $request->telepon;
+        $data->save();
+        return redirect(route("anggota.index"));
     }
 
     
     public function destroy($id)
     {
-        //
+        Keanggotaan::where("id",$id)->delete();
+        return redirect(route("anggota.index"));
     }
 }

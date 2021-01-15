@@ -17,6 +17,10 @@
         </div>
         @yield("content")
     </div>
+    <form method="post" action="" id="form-delete">
+        <csrf></csrf>
+        <input type="hidden" name="_method" value="delete">
+    </form>
     <script>
         $(document).ready(() => {
             setInterval(()=>{

@@ -12,6 +12,8 @@ try {
     window.Popper = require('popper.js').default;
     window.$ = window.jQuery = require('jquery');
 
+    window.application = new Main();
+    window.application.init();
     require('bootstrap');
     
 } catch (e) {}
@@ -43,4 +45,3 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
-window.main = new Main();
