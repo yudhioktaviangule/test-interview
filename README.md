@@ -6,7 +6,7 @@
 
 - Clone App
 - Ekstrak App di direktori anda
-- Buka menggunakan [Visual Studio Code](https://code.visualstudio.com/)
+- Buka direktori app menggunakan [Visual Studio Code](https://code.visualstudio.com/)
 - Buat database di mySQL anda 
 - Kemudian untuk konfigurasi database ada di file .env 
 - Pada file .env ubah pada bagian
