@@ -21,3 +21,8 @@ DB_PASSWORD=<password_mysql>
 ```bash
     php artisan migrate
 ```
+- Setelah migrate selesai. Masukkan lagi perintah 
+```bash
+    php artisan serve
+```
+- Aplikasi akan berjalan di [http://localhost:8000](http://localhost:8000)
