@@ -16,7 +16,7 @@ DB_USERNAME=<username_mysql>
 DB_PASSWORD=<password_mysql>
 ```
 
-- Setelah membuat database dan konfigurasi database di file .env masuk kembali ke VSCODE dan tekan CTRL + ~
+- Setelah membuat database dan konfigurasi database di file .env, di VSCODE tekan CTRL + ~
 - Masukkan perintah 
 ```bash
     php artisan migrate
