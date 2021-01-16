@@ -10,7 +10,6 @@
         "production": "mix --production"
     },
     "devDependencies": {
-        "axios": "^0.21",
         "bootstrap": "^4.0.0",
         "jquery": "^3.2",
         "laravel-mix": "^6.0.6",
@@ -20,5 +19,16 @@
         "resolve-url-loader": "3.1.0",
         "sass": "^1.15.2",
         "sass-loader": "^8.0.0"
+    },
+    "dependencies": {
+        "@babel/plugin-proposal-class-properties": "^7.12.1",
+        "axios": "^0.21.1"
+    },"babel": {
+        "presets": [
+            "@babel/preset-env"
+        ],
+        "plugins": [
+            "@babel/plugin-proposal-class-properties"
+        ]
     }
 }

@@ -10,7 +10,7 @@ class KeanggotaanController extends Controller
 {
     public function index()
     {
-        $data = Keanggotaan::get();
+        $data = Keanggotaan::limit(50)->get();
         return view("keanggotaan.index",compact("data"));
     }
 

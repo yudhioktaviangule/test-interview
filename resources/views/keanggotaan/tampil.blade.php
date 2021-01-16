@@ -43,12 +43,7 @@
                                 <a href="{{ route('anggota.index') }}" class="btn btn-primary">
                                     Kembali
                                 </a>
-                                <a href="#" onclick='window.anggota.cetakKartu({
-                                    name:"{{ $data->name }}",
-                                    email:"{{ $data->email }}",
-                                    telepon:"{{ $data->telepon }}",
-                                    alamat:"{{ $data->alamat }}",
-                                })' class="btn btn-success">
+                                <a href="#" onclick='window.anggota.cetakKartu({{$data->toJson(JSON_PRETTY_PRINT) }})' class="btn btn-success">
                                     Cetak
                                 </a>
                                 <a href="{{ route('anggota.edit',[ 'anggotum' => $data->id ]) }}" class="btn btn-warning">
